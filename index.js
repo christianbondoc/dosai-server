@@ -1,19 +1,16 @@
 // const server = require("http").Server();
 const server = require("https").Server();
 const port = process.env.PORT || 10001;
-const express = require("express");
-const app = express();
+//const express = require("express");
+//const app = express();
 
 var io = require("socket.io").listen(server);
 
 var usernames = [],
 	msgs = [];
 
-app.get("/", (req, resp) => {
-    resp.end("Hey");
-})
 
-app.listen(port, (err)=> {
+server.listen(port, (err)=> {
     if(err) {
         console.log("Work? " + err);
         return false;
