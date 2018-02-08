@@ -4,7 +4,7 @@ const port = process.env.PORT || 10001;
 //const express = require("express");
 //const app = express();
 
-var io = require("socket.io").listen(server);
+var io = require("socket.io")(server);
 
 var usernames = [],
 	msgs = [];
